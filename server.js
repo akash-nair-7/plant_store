@@ -7,7 +7,6 @@ connectDb();
 const app = express();
 app.use(express.json());
 port = process.env.PORT || 3000;
-console.log(port)
 app.use("/api/plants",router);
 app.use("/api/users",require("./routes/userRoutes"))
 app.use(errorHandler)
