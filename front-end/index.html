@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Store - Your Green Paradise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🌿 Plant Store</div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#plants" class="nav-link">Shop</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li id="adminLink" style="display: none;"><a href="#admin" class="nav-link">Admin</a></li>
+            </ul>
+            <div class="auth-buttons" id="authButtons">
+                <button class="btn btn-login" id="loginBtn">Login</button>
+                <button class="btn btn-signup" id="signupBtn">Sign Up</button>
+            </div>
+            <div class="user-menu" id="userMenu" style="display: none;">
+                <span id="userEmail"></span>
+                <button class="btn btn-logout" id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Plant Store</h1>
+            <p>Bring nature into your home with our premium plant collection</p>
+        </div>
+    </section>
+
+    <!-- Plants Section -->
+    <section id="plants" class="plants-section">
+        <h2>Our Plants</h2>
+        <div class="plants-container" id="plantsContainer">
+            <!-- Plants will be loaded here -->
+        </div>
+    </section>
+
+    <!-- Admin Section -->
+    <section id="admin" class="admin-section" style="display: none;">
+        <h2>Admin Dashboard</h2>
+        <div class="admin-content">
+            <div class="add-plant-form">
+                <h3>Add New Plant</h3>
+                <form id="addPlantForm">
+                    <input type="text" id="plantName" placeholder="Plant Name" required>
+                    <input type="number" id="plantPrice" placeholder="Price" step="0.01" required>
+                    <input type="text" id="plantCategory" placeholder="Category" required>
+                    <input type="number" id="plantStock" placeholder="Stock" required>
+                    <textarea id="plantDescription" placeholder="Description" rows="4" required></textarea>
+                    <button type="submit" class="btn btn-primary">Add Plant</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>We are passionate about bringing nature into your home. Our carefully curated selection of plants ensures quality and beauty.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Plant Store. All rights reserved.</p>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeLoginModal">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="switchToSignup">Sign up here</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeSignupModal">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="signupForm">
+                <input type="text" id="signupUsername" placeholder="Username" required>
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" id="switchToLogin">Login here</a></p>
+        </div>
+    </div>
+
+    <!-- Plant Details Modal -->
+    <div id="plantDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closePlantModal">&times;</span>
+            <div id="plantDetails"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
